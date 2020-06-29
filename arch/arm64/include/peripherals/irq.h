@@ -1,0 +1,27 @@
+#ifndef _P_IRQ_H
+#define _P_IRQ_H
+
+#include "peripherals/base.h"
+#include "mm.h"
+
+#define TIMER_INT_CTRL_C0 (VA1_START + 0x40000040)
+#define TIMER_INT_CTRL_C1 (VA1_START + 0x40000044)
+#define TIMER_INT_CTRL_C2 (VA1_START + 0x40000048)
+#define TIMER_INT_CTRL_C3 (VA1_START + 0x4000004C)
+
+#define LOCAL_TIMER_IRQ_CS  (VA1_START + 0x40000034)
+#define LOCAL_TIMER_IRQ_CR  (VA1_START + 0x40000038)
+
+#define INT_SRC_C0 (VA1_START + 0x40000060)
+#define INT_SRC_C1 (VA1_START + 0x40000064)
+#define INT_SRC_C2 (VA1_START + 0x40000068)
+#define INT_SRC_C3 (VA1_START + 0x4000006C)
+
+#define CORE_CNTxxIRQ_FIQ_EN (0xF << 4)
+#define CORE_CNTxxIRQ_IRQ_EN 0xF
+
+#define LOCAL_TIMER_INT (1 << 11)
+#define LOCAL_TIMER_INT_EN (1 << 29)
+#define LOCAL_TIMER_TIMER_EN (1 << 28)
+
+#endif  /*_P_IRQ_H */
